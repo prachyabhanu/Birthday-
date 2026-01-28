@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        /* CSS STYLES */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .glass-card {
+            /* Glassmorphism Effect */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            width: 80%;
+            max-width: 400px;
+            color: white;
+            z-index: 10;
+        }
+
+        .bday-gif {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .btn-play {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            background: #fff;
+            color: #764ba2;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-play:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+
+        /* Simple floating animation for the card */
+        .glass-card {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJmZ3Z3Ym90Z3Z3Ym90Z3Z3Ym90Z3Z3Ym90Z3Z3Ym90JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/LROWHXgwkd1I16SIn2/giphy.gif" alt="Birthday GIF" class="bday-gif">
+        
+        <h1>Happy Birthday! 🎂</h1>
+        <p>Sending you magic, joy, and plenty of cake today!</p>
+
+        <button class="btn-play" onclick="playMusic()">Start Celebration ✨</button>
+
+        <audio id="bday-music" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function playMusic() {
+            const music = document.getElementById('bday-music');
+            music.play();
+            alert("Enjoy your day! 🎉");
+        }
+    </script>
+
+</body>
+</html>
